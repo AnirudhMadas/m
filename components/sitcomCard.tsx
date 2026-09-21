@@ -5,7 +5,7 @@ export default function SitcomCard({ id, title, emoji, description, onSelect, se
 
 
     function handlePress() {
-        onSelect(title); // Call the parent function with the sitcom title
+        onSelect(id); // Call the parent function with the sitcom ID
     }
 
     return (

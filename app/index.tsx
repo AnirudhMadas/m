@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import SitcomCard from "../components/sitcomCard";
@@ -10,6 +11,11 @@ export default function HomeScreen() {
 
   const handleSelect = (id: string) => {
     setSelectedSitcom(id);
+
+    const sitcom = sitcoms.find((s) => s.id === id);
+    if (sitcom) {
+      router.push(sitcom.route as any);
+    }
   };
 
   return (
