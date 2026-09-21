@@ -1,12 +1,11 @@
-import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
 
-export default function SitcomCard({ title, emoji, description }: { title: string; emoji: string; description: string }) {
+export default function SitcomCard({ id, title, emoji, description, onSelect, selected }: { id: string; title: string; emoji: string; description: string; onSelect: (id: string) => void; selected: boolean }) {
 
-    const [selected, setSelected] = useState(false);
+
     function handlePress() {
-        setSelected(!selected);
+        onSelect(title); // Call the parent function with the sitcom title
     }
 
     return (
@@ -61,6 +60,6 @@ const styles = StyleSheet.create({
     },
     selectedCard: {
         borderWidth: 2,
-        borderColor: "#000",
+        borderColor: "green",
     },
 });
