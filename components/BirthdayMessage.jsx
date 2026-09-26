@@ -1,79 +1,61 @@
-// import { StyleSheet, Text, View } from "react-native";
-
-// export default function BirthdayMessage({
-//   greeting = "Happy Birthday!",
-//   message,
-//   signature,
-// }) {
-//   return (
-//     <View>
-//       <Text style={styles.greeting}>{greeting}</Text>
-//       <Text style={styles.message}>{message}</Text>
-//       {signature ? <Text style={styles.signature}>— {signature}</Text> : null}
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   greeting: {
-//     fontSize: 20,
-//     fontWeight: "800",
-//     color: "#fff",
-//     marginBottom: 10,
-//   },
-//   message: {
-//     fontSize: 15,
-//     lineHeight: 22,
-//     color: "#e0e0e0",
-//   },
-//   signature: {
-//     fontSize: 13,
-//     color: "#b5b5b5",
-//     fontStyle: "italic",
-//     marginTop: 12,
-//     textAlign: "right",
-//   },
-// });
-
 import { StyleSheet, Text, View } from "react-native";
 
-export default function BirthdayMessage({ message }) {
+export default function BirthdayMessage({
+  heading = "The Birthday Message",
+  message,
+}) {
   return (
-    <View style={styles.card}>
+    <View style={styles.container}>
       <Text style={styles.emoji}>🎂</Text>
 
-      <Text style={styles.heading}>HAPPY BIRTHDAY!</Text>
+      <Text style={styles.heading}>{heading}</Text>
 
-      <Text style={styles.message}>{message}</Text>
+      <View style={styles.card}>
+        <Text style={styles.message}>{message}</Text>
+      </View>
     </View>
   );
 }
-
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 20,
-    padding: 24,
-    alignItems: "center",
-    elevation: 4,
+  container: {
+    paddingHorizontal: 20,
+    marginTop: 10,
+    marginBottom: 30,
   },
 
   emoji: {
-    fontSize: 45,
-    marginBottom: 10,
+    fontSize: 28,
+    marginBottom: 6,
   },
 
   heading: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: "800",
-    textAlign: "center",
+    color: "#2b2b2b",
+    marginBottom: 14,
+  },
+
+  card: {
+    backgroundColor: "#fff8ef",
+    borderRadius: 20,
+    padding: 24,
+    borderWidth: 1,
+    borderColor: "#eadfce",
+
+    shadowColor: "#8c7355",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.08,
+    shadowRadius: 8,
+
+    elevation: 2,
   },
 
   message: {
     fontSize: 16,
-    lineHeight: 24,
-    textAlign: "center",
-    marginTop: 12,
-    opacity: 0.75,
+    lineHeight: 27,
+    color: "#514a44",
   },
 });

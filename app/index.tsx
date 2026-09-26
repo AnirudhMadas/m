@@ -1,7 +1,7 @@
 import { router } from "expo-router";
 import { useState } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import SitcomCard from "../components/sitcomCard";
+import SitcomCard from "../components/SitcomCard";
 import { sitcoms } from "../data/sitcoms";
 
 export default function HomeScreen() {
