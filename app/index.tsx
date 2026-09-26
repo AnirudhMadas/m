@@ -1,9 +1,11 @@
 import { router } from "expo-router";
 import { useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import BirthdayCakeWish from "../components/BirthdayCakeWish";
 import ScrapbookStamp from "../components/ScrapbookStamp";
 import SitcomCard from "../components/SitcomCard";
 import WashiTape from "../components/WashiTape";
+import { BIRTHDAY_CONFIG } from "../data/birthdayConfig";
 import { sitcoms } from "../data/sitcoms";
 
 export default function HomeScreen() {
@@ -25,18 +27,33 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
         ListHeaderComponent={
           <View style={styles.headerBlock}>
-            <WashiTape color="#FCD34D" width={110} height={24} rotation="-1.5deg" />
+            <WashiTape color="#F472B6" width={120} height={24} rotation="-1deg" />
 
-            <Text style={styles.headerEmoji}>📖✨</Text>
-            <Text style={styles.mainTitle}>The Comfort Scrapbook</Text>
+            {/* Birthday Gift Tag */}
+            <View style={styles.giftTag}>
+              <View style={styles.giftTagHole} />
+              <Text style={styles.giftTagTo}>TO: {BIRTHDAY_CONFIG.recipientName} 🎀</Text>
+              <Text style={styles.giftTagFrom}>FROM: {BIRTHDAY_CONFIG.giftTagFrom} 🎁</Text>
+            </View>
+
+            <Text style={styles.headerEmoji}>🎂🎁✨</Text>
+            <Text style={styles.mainTitle}>{BIRTHDAY_CONFIG.fullTitle}</Text>
             <Text style={styles.subtitle}>
-              A little sanctuary of laughter, hugs, and favorite sitcom moments whenever you need a smile.
+              {BIRTHDAY_CONFIG.birthdayTagline} Open these albums for endless comfort, laughs, and birthday surprises!
             </Text>
 
-            <ScrapbookStamp label="Open Whenever You Need A Smile" emoji="💛" color="#92400E" rotation="1deg" />
+            <ScrapbookStamp
+              label={`Official Birthday Present For ${BIRTHDAY_CONFIG.recipientName}`}
+              emoji="👑"
+              color="#BE185D"
+              rotation="1.5deg"
+            />
+
+            {/* Interactive Birthday Cake with Candles */}
+            <BirthdayCakeWish />
 
             <View style={styles.shelfHeader}>
-              <Text style={styles.shelfTitle}>CHOOSE YOUR SCRAPBOOK ALBUM</Text>
+              <Text style={styles.shelfTitle}>CHOOSE A BIRTHDAY ALBUM TO OPEN</Text>
             </View>
           </View>
         }
@@ -57,7 +74,7 @@ export default function HomeScreen() {
         ListFooterComponent={
           <View style={styles.footerBlock}>
             <Text style={styles.footerNote}>
-              Save this page & open anytime: on good days, tough days, or whenever you need a chuckle. 🌻
+              Save this gift link & visit anytime: on good days, tough days, or whenever you want a warm laugh, {BIRTHDAY_CONFIG.recipientName}. 🌻💛
             </Text>
           </View>
         }
@@ -69,22 +86,59 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#F8F3E8", // warm scrapbook paper background
+    backgroundColor: "#F8F3E8",
   },
   scrollContent: {
     paddingHorizontal: 20,
-    paddingTop: 30,
+    paddingTop: 24,
     paddingBottom: 50,
   },
   headerBlock: {
     alignItems: "center",
-    marginBottom: 20,
+    marginBottom: 16,
     paddingTop: 10,
+  },
+  giftTag: {
+    backgroundColor: "#FEF3C7",
+    paddingVertical: 8,
+    paddingHorizontal: 18,
+    borderRadius: 8,
+    borderWidth: 1.5,
+    borderColor: "#FCD34D",
+    alignItems: "center",
+    marginBottom: 14,
+    marginTop: 6,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
+    elevation: 2,
+    position: "relative",
+  },
+  giftTagHole: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    backgroundColor: "#F8F3E8",
+    borderWidth: 1,
+    borderColor: "#D97706",
+    marginBottom: 4,
+  },
+  giftTagTo: {
+    fontSize: 13,
+    fontWeight: "900",
+    letterSpacing: 1.5,
+    color: "#9A3412",
+  },
+  giftTagFrom: {
+    fontSize: 11,
+    fontWeight: "700",
+    color: "#B45309",
+    marginTop: 2,
   },
   headerEmoji: {
     fontSize: 44,
-    marginTop: 8,
-    marginBottom: 8,
+    marginBottom: 6,
   },
   mainTitle: {
     fontSize: 27,
@@ -94,15 +148,16 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   subtitle: {
-    marginTop: 8,
+    marginTop: 6,
     fontSize: 14,
     color: "#726354",
     textAlign: "center",
     lineHeight: 21,
     maxWidth: 340,
+    marginBottom: 8,
   },
   shelfHeader: {
-    marginTop: 24,
+    marginTop: 20,
     marginBottom: 4,
     alignSelf: "flex-start",
   },

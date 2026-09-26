@@ -1,42 +1,56 @@
+import { BIRTHDAY_CONFIG } from "./birthdayConfig";
+
+const m = BIRTHDAY_CONFIG.recipientName;
+
 const modernFamilyData = {
   hero: {
     emoji: "🏡",
     title: "MODERN FAMILY",
-    subtitle: "The one with Philsosophy wisdom, Cam drama, and comforting family chaos 📸",
-    stamp: "Dunphy Family Archives · Pure Heart",
+    subtitle: `The one where the Dunphy-Pritchett family throws ${m} an unforgettable celebration! 📸`,
+    stamp: `Dunphy Family Archives · Dedicated To ${m}`,
   },
 
   birthdayMessage: {
-    title: "A Message From The Entire Dunphy-Pritchett Clan",
+    heading: `A Family Hug For ${m}`,
     message:
-      "Every family has its own kind of wonderful crazy. Phil has his trampoline tricks, Cam has his theatrical entrances, Gloria has her passion, and Claire keeps everyone alive. Today and every day, you are warmly embraced! ❤️",
+      `Every family has its own brand of wonderful crazy. Phil has his trampoline tricks, Cam has his theatrical entrances, Gloria has her passion, and Claire keeps everyone running. Today and every day, ${m}, you are warmly embraced! Happy Birthday, ${m}! ❤️`,
+  },
+
+  birthdaySurprise: {
+    tag: `SURPRISE GIFT #4 FOR ${m}`,
+    title: `Phil's Official Magician's Guild Award`,
+    revealedItem: "🎩✨",
+    revealedTitle: `Master of Magic & Coolness Certificate!`,
+    gifUri: "https://i.giphy.com/l2Je0oOcT4cioSIfu.gif",
+    revealedMessage:
+      `Phil Dunphy tips his magician's top hat: '${m}! The Magicians' Alliance has officially declared you the coolest, kindest, most magical human being on the planet! Always keep your wonder alive!' Ta-da!`,
   },
 
   stickyNotes: [
     {
       id: "mf-n1",
-      tag: "Phil's-osophy",
-      text: "When life gives you lemonade, make lemons. Life will be all like, 'Whaaaat?' Always stay positive and keep your sense of humor.",
+      tag: `Phil's-osophy For ${m}`,
+      text: `When life gives you lemonade, make lemons! Life will be like, 'Whaaaat?' Never lose your optimism, your goofy smile, and your huge heart, ${m}.`,
       author: "Phil Dunphy",
-      color: "#FEF3C7", // yellow
+      color: "#FEF3C7",
       tapeColor: "#FCD34D",
       rotation: "2deg",
     },
     {
       id: "mf-n2",
-      tag: "Gloria's Fierce Wisdom",
-      text: "You cannot spend your life being afraid. Stand tall, speak from your heart, and if someone gives you attitude, give them twice as much confidence back.",
+      tag: `Gloria's Fierce Blessing`,
+      text: `You cannot spend your life hiding your light, ${m}! Hold your head high, speak with passion, and always know how beautiful you are inside and out!`,
       author: "Gloria Delgado-Pritchett",
-      color: "#FCE7F3", // rose
+      color: "#FCE7F3",
       tapeColor: "#F472B6",
       rotation: "-1.5deg",
     },
     {
       id: "mf-n3",
-      tag: "Jay's Soft Heart",
-      text: "Sometimes things don't go according to plan. You just take a seat, shake your head, and remember the people around you are what really counts.",
+      tag: `Jay's Warm Words`,
+      text: `Take a look around, ${m}. You've done great things, and the best days are still ahead. Enjoy every second of your special day.`,
       author: "Jay Pritchett",
-      color: "#DCFCE7", // mint green
+      color: "#DCFCE7",
       tapeColor: "#86EFAC",
       rotation: "1deg",
     },
@@ -46,74 +60,74 @@ const modernFamilyData = {
     {
       id: "mf-1",
       title: "Phil Dunphy: The Cool Dad",
-      description: "T-G-I-F: Thank God I'm Fabulous. Pure unadulterated Phil enthusiasm.",
-      gif: "https://media.giphy.com/media/l2Je0oOcT4cioSIfu/giphy.gif",
+      description: `Phil reminding ${m} that staying fabulous and positive is a superpower.`,
+      gif: "https://i.giphy.com/l2Je0oOcT4cioSIfu.gif",
       emoji: "🧔",
       sticker: "✨",
       mood: "pep",
     },
     {
       id: "mf-2",
-      title: "Cameron Tucker Dramatic Entrance",
-      description: "Why be subtle when you can enter every situation like a Broadway headliner?",
-      gif: "https://media.giphy.com/media/3o7TKRBB3E7GEygUw8/giphy.gif",
-      emoji: "🎭",
-      sticker: "⭐",
-      mood: "laugh",
-    },
-    {
-      id: "mf-3",
-      title: "Gloria Delgado-Pritchett Laughs",
-      description: "Unstoppable vibrant energy that lights up the whole room instantly.",
-      gif: "https://media.giphy.com/media/26gsq8fim9nnlRUgU/giphy.gif",
+      title: "Gloria's Radiant Smile",
+      description: `Pure, joyful energy lighting up the room to celebrate ${m}.`,
+      gif: "https://i.giphy.com/26gsq8fim9nnlRUgU.gif",
       emoji: "💃",
       sticker: "🔥",
       mood: "laugh",
     },
     {
-      id: "mf-4",
-      title: "The Big Warm Family Embrace",
-      description: "At the end of all the screaming and chaos, there is unconditional love and shelter.",
-      gif: "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif",
-      emoji: "❤️",
-      sticker: "🏡",
+      id: "mf-3",
+      title: "Dunphy Family Warmth",
+      description: "Celebrating together through the noise, the laughs, and the love.",
+      gif: "https://i.giphy.com/E4Y0VjghOGxKE.gif",
+      emoji: "🏡",
+      sticker: "❤️",
       mood: "comfort",
+    },
+    {
+      id: "mf-4",
+      title: "Pure Celebration Spirit",
+      description: `Surrounding ${m} with laughter and unconditional family support.`,
+      gif: "https://i.giphy.com/fYGM9HVdNeSzOI3Wet.gif",
+      emoji: "🎉",
+      sticker: "⭐",
+      mood: "pep",
     },
   ],
 
   roulette: [
     {
       id: "mf-r1",
-      title: "Phil's Magic Touch",
-      quote: "Always look people in the eye, even if they're blind. Just say, 'I'm looking you in the eye.'",
-      gif: "https://media.giphy.com/media/3o7TKEdkffW7Y4bSVi/giphy.gif",
+      title: "Cool Dad Energy",
+      quote: `You are fabulous, ${m}! T-G-I-F: Thank God I'm Fabulous!`,
+      gif: "https://i.giphy.com/l2Je0oOcT4cioSIfu.gif",
     },
     {
       id: "mf-r2",
-      title: "Cam's Drama",
-      quote: "I'm sort of like Costco. I'm big, I'm not fancy, and I dare you to not like me.",
-      gif: "https://media.giphy.com/media/3o7TKRBB3E7GEygUw8/giphy.gif",
+      title: "Gloria's Joy",
+      quote: `Today we celebrate the wonderful ${m}!`,
+      gif: "https://i.giphy.com/26gsq8fim9nnlRUgU.gif",
     },
     {
       id: "mf-r3",
-      title: "Cool Dad Energy",
-      quote: "I'm hip, I surf the web, I text: LOL, laugh out loud. OMG, oh my God. WTF, why the face?",
-      gif: "https://media.giphy.com/media/l2Je0oOcT4cioSIfu/giphy.gif",
+      title: "Dunphy Cheer",
+      quote: "Love is what binds us through any kind of weather.",
+      gif: "https://i.giphy.com/E4Y0VjghOGxKE.gif",
     },
     {
       id: "mf-r4",
-      title: "Family Hug",
-      quote: "We're from different worlds, yet we fit together. Love is what binds us through any kind of weather.",
-      gif: "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif",
+      title: "Family Celebration",
+      quote: "Every normal moment becomes extraordinary with the right people.",
+      gif: "https://i.giphy.com/fYGM9HVdNeSzOI3Wet.gif",
     },
   ],
 
   birthdayEpisode: {
     season: "04",
     episode: "11",
-    title: "The All-Hands Family Celebration",
+    title: `The Birthday Extravaganza For ${m}`,
     description:
-      "Phil plans an elaborate magic trick, Cam bakes a 4-tier themed cake, and the whole family gathers to celebrate you.",
+      `Phil plans an elaborate magic show, Cam bakes a 4-tier themed cake, and the whole family gathers in matching shirts to celebrate ${m}.`,
   },
 
   episodeArchive: [
@@ -147,10 +161,10 @@ const modernFamilyData = {
       title: "Open when you're feeling down or lonely",
       preview: "The Dunphy family arms are wide open for a giant hug...",
       description:
-        "Remember that you are cherished and never alone. No matter what happened today, tomorrow is a blank page. Go make yourself a cozy warm tea, put on some comfortable socks, and let yourself relax.",
+        `Remember that you are cherished and never alone, ${m}. No matter what happened today, tomorrow is a blank page. Go make yourself a warm drink, put on cozy socks, and relax.`,
       quote: "We do strange things for the people we love. That's family.",
       character: "Phil Dunphy",
-      gif: "https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif",
+      gif: "https://i.giphy.com/E4Y0VjghOGxKE.gif",
     },
     {
       id: "mf-open-2",
@@ -158,10 +172,10 @@ const modernFamilyData = {
       title: "Open when you need confidence and cheerleading",
       preview: "Phil and Gloria have a message about your superpowers...",
       description:
-        "The world can be noisy, but your light is unique. You have creativity, strength, and that special spark that makes people happy just being around you. Go out there and shine like Cam in the spotlight!",
-      quote: "If you're ever feeling insecure, just remember: you're fabulous and don't let anyone dim your sparkle.",
+        `The world is full of noise, ${m}, but your light is unique. You have creativity, strength, and that special spark that makes everyone smile just being around you. Go out there and shine!`,
+      quote: "You are fabulous, and don't let anyone dim your sparkle.",
       character: "Cameron Tucker",
-      gif: "https://media.giphy.com/media/l2Je0oOcT4cioSIfu/giphy.gif",
+      gif: "https://i.giphy.com/l2Je0oOcT4cioSIfu.gif",
     },
     {
       id: "mf-open-3",
@@ -169,17 +183,17 @@ const modernFamilyData = {
       title: "Open when you need pure ridiculous comedy",
       preview: "Why the face? Phil's-osophy to the rescue!",
       description:
-        "Whenever life gives you lemons, remember Phil Dunphy's advice: throw the lemons back and make lemonade! Don't let anything steal your smile today.",
+        `Whenever life gives you lemons, ${m}, remember Phil Dunphy's advice: throw the lemons back and make lemonade! Don't let anything steal your smile today.`,
       quote: "WTF: Why The Face? Turn that frown upside down!",
       character: "Phil Dunphy",
-      gif: "https://media.giphy.com/media/3o7TKEdkffW7Y4bSVi/giphy.gif",
+      gif: "https://i.giphy.com/26gsq8fim9nnlRUgU.gif",
     },
   ],
 
   finalSurprise: {
-    title: "You Are Part of The Story",
+    title: `You Are Part of The Story, ${m}!`,
     message:
-      "Life is a little chaotic, a little messy, and wonderfully hilarious — but having people like you in it makes all the difference in the world. Keep smiling! ❤️",
+      `Happy Birthday, ${m}! Life is a little chaotic, a little messy, and wonderfully hilarious — but having people like you in it makes all the difference in the world. Keep smiling! ❤️`,
   },
 };
 
