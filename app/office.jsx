@@ -1,24 +1,44 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
-export default function FriendsScreen() {
+import BirthdayEpisode from "../components/BirthdayEpisode";
+import BirthdayMessage from "../components/BirthdayMessage";
+import EpisodeArchive from "../components/EpisodeArchive";
+import FavoriteMoments from "../components/FavoriteMoments";
+import FinalSurprise from "../components/FinalSurprise";
+import OpenWhen from "../components/OpenWhen";
+import SitcomHero from "../components/SitcomHero";
+
+import officeData from "../data/officeData";
+
+export default function OfficeScreen() {
+  const data = officeData;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>☕ OFFICE</Text>
+    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+      <SitcomHero {...data.hero} />
 
-      <Text>Welcome to the Office episode!</Text>
-    </View>
+      <BirthdayMessage {...data.birthdayMessage} />
+
+      <FavoriteMoments moments={data.favoriteMoments} />
+
+      <BirthdayEpisode {...data.birthdayEpisode} />
+
+      <EpisodeArchive episodes={data.episodeArchive} />
+
+      <OpenWhen cards={data.openWhen} />
+
+      <FinalSurprise {...data.finalSurprise} />
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "#F8F1E7",
   },
 
-  title: {
-    fontSize: 30,
-    fontWeight: "bold",
+  content: {
+    paddingBottom: 40,
   },
 });
