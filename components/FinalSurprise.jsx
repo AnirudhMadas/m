@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import WashiTape from "./WashiTape";
 
 export default function FinalSurprise({
   title = "One Last Thing...",
@@ -11,21 +12,23 @@ export default function FinalSurprise({
     <View style={styles.container}>
       <Text style={styles.emoji}>🎁</Text>
 
-      <Text style={styles.heading}>Final Surprise</Text>
+      <Text style={styles.heading}>Scrapbook Souvenir</Text>
 
       <Text style={styles.subtitle}>
-        Every good episode deserves an ending.
+        Every good album has a final secret message tucked away at the back.
       </Text>
 
       <View style={styles.card}>
+        <WashiTape color="#FCA5A5" width={100} height={22} rotation="1.5deg" />
+
         {!revealed ? (
           <>
-            <Text style={styles.smallTitle}>🎬 THE FINAL SCENE</Text>
+            <Text style={styles.smallTitle}>✨ SECRET POCKET NOTE</Text>
 
             <Text style={styles.title}>{title}</Text>
 
             <Text style={styles.description}>
-              But wait... there's still one more thing.
+              Tap below to unseal this special note whenever you need an extra smile.
             </Text>
 
             <Pressable
@@ -35,135 +38,127 @@ export default function FinalSurprise({
               ]}
               onPress={() => setRevealed(true)}
             >
-              <Text style={styles.buttonText}>✨ OPEN IT ✨</Text>
+              <Text style={styles.buttonText}>✨ UNSEAL NOTE ✨</Text>
             </Pressable>
           </>
         ) : (
           <>
-            <Text style={styles.revealedEmoji}>💛</Text>
+            <Text style={styles.revealedEmoji}>🌻💛✨</Text>
 
-            <Text style={styles.title}>Happy Birthday!</Text>
+            <Text style={styles.title}>You Are Cherished!</Text>
 
             <Text style={styles.message}>{message}</Text>
 
-            <Text style={styles.end}>THE END... FOR NOW 🎬</Text>
+            <View style={styles.endBadge}>
+              <Text style={styles.end}>TO BE CONTINUED IN REAL LIFE 🎬</Text>
+            </View>
           </>
         )}
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
     marginBottom: 50,
   },
-
   emoji: {
     fontSize: 28,
     marginBottom: 6,
   },
-
   heading: {
     fontSize: 22,
     fontWeight: "800",
-    color: "#2b2b2b",
+    color: "#2C231B",
   },
-
   subtitle: {
-    marginTop: 6,
+    marginTop: 4,
     marginBottom: 16,
     fontSize: 14,
-    color: "#77706a",
+    color: "#776B5E",
   },
-
   card: {
-    backgroundColor: "#fff5df",
-
-    borderRadius: 22,
-    padding: 28,
-
+    backgroundColor: "#FFFBF2",
+    borderRadius: 20,
+    padding: 26,
     alignItems: "center",
-
-    borderWidth: 1,
-    borderColor: "#ead8b5",
-
-    shadowColor: "#8c7355",
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
+    borderWidth: 1.5,
+    borderColor: "#EADCC6",
+    shadowColor: "#3D2E1E",
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.1,
-    shadowRadius: 10,
-
+    shadowRadius: 8,
     elevation: 3,
   },
-
   smallTitle: {
     fontSize: 10,
     fontWeight: "800",
     letterSpacing: 1.5,
-    color: "#b47c00",
-    marginBottom: 15,
-  },
-
-  title: {
-    fontSize: 25,
-    fontWeight: "900",
-    color: "#2b2b2b",
-    textAlign: "center",
+    color: "#B45309",
+    marginTop: 8,
     marginBottom: 12,
   },
-
+  title: {
+    fontSize: 23,
+    fontWeight: "900",
+    color: "#2C231B",
+    textAlign: "center",
+    marginBottom: 10,
+  },
   description: {
     fontSize: 14,
     lineHeight: 21,
-    color: "#665e56",
+    color: "#6D5F52",
     textAlign: "center",
-    marginBottom: 22,
+    marginBottom: 20,
   },
-
   button: {
-    backgroundColor: "#f3d477",
-
+    backgroundColor: "#D97706",
     paddingVertical: 12,
-    paddingHorizontal: 24,
-
-    borderRadius: 25,
-
-    borderWidth: 1,
-    borderColor: "#e1bd54",
+    paddingHorizontal: 26,
+    borderRadius: 24,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 3,
+    elevation: 2,
   },
-
   buttonPressed: {
-    opacity: 0.75,
-    transform: [{ scale: 0.97 }],
+    opacity: 0.8,
+    transform: [{ scale: 0.98 }],
   },
-
   buttonText: {
     fontSize: 12,
     fontWeight: "900",
     letterSpacing: 1,
-    color: "#5c4300",
+    color: "#FFFFFF",
   },
-
   revealedEmoji: {
-    fontSize: 45,
-    marginBottom: 10,
+    fontSize: 40,
+    marginBottom: 8,
+    marginTop: 6,
   },
-
   message: {
     fontSize: 15,
-    lineHeight: 24,
-    color: "#514a44",
+    lineHeight: 25,
+    color: "#4A3D31",
     textAlign: "center",
-    marginBottom: 22,
+    marginBottom: 20,
   },
-
+  endBadge: {
+    backgroundColor: "#F4EDE1",
+    paddingVertical: 6,
+    paddingHorizontal: 12,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#E2D5C3",
+  },
   end: {
     fontSize: 10,
-    fontWeight: "800",
+    fontWeight: "900",
     letterSpacing: 1.5,
-    color: "#b47c00",
+    color: "#92400E",
   },
 });

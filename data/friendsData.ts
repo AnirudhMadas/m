@@ -2,45 +2,118 @@ const friendsData = {
   hero: {
     emoji: "☕",
     title: "FRIENDS",
-    subtitle: "The one where the celebration begins 🎂",
+    subtitle: "The one where you have a comfort scrapbook to smile anytime ❤️",
+    stamp: "Central Perk Blend · 100% Comfort",
   },
 
   birthdayMessage: {
-    title: "A Message From The Friends",
+    title: "The Warmest Hug From Central Perk",
     message:
-      "Could this birthday BE any more special? Six friends, countless memories, and one very special person we're celebrating today. ❤️",
+      "Could this scrapbook BE any more full of love? Whenever life feels heavy, chaotic, or you just need a good laugh, consider this your favorite orange couch in Central Perk. You're never alone! ❤️",
   },
+
+  stickyNotes: [
+    {
+      id: "fn-1",
+      tag: "Monica's Rule",
+      text: "Welcome to the real world! It sucks. You're gonna love it. And you're stronger than you think.",
+      author: "Monica Geller",
+      color: "#FEF3C7", // yellow
+      tapeColor: "#FCD34D",
+      rotation: "-1.5deg",
+    },
+    {
+      id: "fn-2",
+      tag: "Joey's Wisdom",
+      text: "Whenever things don't go according to plan, grab your favorite snack, take a breath, and smile. Food and friends fix almost everything.",
+      author: "Joey Tribbiani",
+      color: "#FFE4E6", // soft rose
+      tapeColor: "#FDA4AF",
+      rotation: "2deg",
+    },
+    {
+      id: "fn-3",
+      tag: "Chandler's Truth",
+      text: "I'm not great at the advice. Can I interest you in a sarcastic comment and a goofy dance?",
+      author: "Chandler Bing",
+      color: "#E0F2FE", // sky blue
+      tapeColor: "#7DD3FC",
+      rotation: "-1deg",
+    },
+  ],
 
   favoriteMoments: [
     {
       id: "friends-1",
-      title: "Central Perk",
-      description:
-        "Because somehow the best conversations always happened over a cup of coffee.",
+      title: "Central Perk Cozy Vibe",
+      description: "No matter how wild the day gets, there is always a warm mug and people who adore you.",
+      gif: "https://media.giphy.com/media/VbEC9WchxkiWTL5PFo/giphy.gif",
       emoji: "☕",
+      sticker: "🛋️",
+      mood: "comfort",
     },
     {
       id: "friends-2",
-      title: "The One With The Memories",
-      description:
-        "All those little moments that somehow became the best memories.",
-      emoji: "❤️",
+      title: "The Chandler Victory Dance",
+      description: "Guaranteed to boost your serotonin on days when you feel a little drained.",
+      gif: "https://media.giphy.com/media/fVbVBvONn4OyQ/giphy.gif",
+      emoji: "🕺",
+      sticker: "✨",
+      mood: "laugh",
     },
     {
       id: "friends-3",
-      title: "The Group",
-      description:
-        "Six completely different people who somehow made the perfect friend group.",
-      emoji: "👫",
+      title: "PIVOT! PIVOT! PIVOT!",
+      description: "When life throws a giant couch up your narrow staircase, just yell PIVOT and keep pushing.",
+      gif: "https://media.giphy.com/media/oCjCwnuLpiWbfbBQKi/giphy.gif",
+      emoji: "🛋️",
+      sticker: "😂",
+      mood: "laugh",
+    },
+    {
+      id: "friends-4",
+      title: "Pure Celebration Energy",
+      description: "Monica cheering you on because you are doing an amazing job just existing.",
+      gif: "https://media.giphy.com/media/26FPGI3ZgduhYYVTa/giphy.gif",
+      emoji: "🎉",
+      sticker: "⭐",
+      mood: "pep",
+    },
+  ],
+
+  roulette: [
+    {
+      id: "r1",
+      title: "The Iconic 'How You Doin'?'",
+      quote: "How you doin'?",
+      gif: "https://media.giphy.com/media/jOmbf8v836F8s/giphy.gif",
+    },
+    {
+      id: "r2",
+      title: "Chandler's Happy Groove",
+      quote: "Could today BE any more wonderful?",
+      gif: "https://media.giphy.com/media/fVbVBvONn4OyQ/giphy.gif",
+    },
+    {
+      id: "r3",
+      title: "Fountain Celebration",
+      quote: "I'll be there for you, 'cause you're there for me too.",
+      gif: "https://media.giphy.com/media/XGOKTEoHSgduavRvVM/giphy.gif",
+    },
+    {
+      id: "r4",
+      title: "Central Perk Hug",
+      quote: "The one where you're reminded that you are deeply cherished.",
+      gif: "https://media.giphy.com/media/VbEC9WchxkiWTL5PFo/giphy.gif",
     },
   ],
 
   birthdayEpisode: {
     season: "10",
     episode: "18",
-    title: "The One With Your Birthday",
+    title: "The One With Your Special Day",
     description:
-      "The gang gets together for one final celebration filled with laughter, memories, and everything that makes your story special.",
+      "A tribute episode filled with warm memories, endless laughter, and a reminder of how bright you make every room you step into.",
   },
 
   episodeArchive: [
@@ -48,56 +121,65 @@ const friendsData = {
       id: "friends-ep1",
       season: "01",
       episode: "01",
-      title: "Pilot",
-      description:
-        "The one where it all begins and six friends become a family.",
+      title: "The One Where Monica Gets a Roommate",
+      description: "Where six strangers become the ultimate comfort family.",
     },
     {
       id: "friends-ep2",
-      season: "02",
-      episode: "07",
-      title: "The One Where Ross Finds Out",
-      description:
-        "A memorable episode filled with friendship, feelings, and classic Friends chaos.",
+      season: "04",
+      episode: "12",
+      title: "The One With The Embryos (The Trivia Game)",
+      description: "Pure sitcom perfection guaranteed to make you laugh every single rewatch.",
     },
     {
       id: "friends-ep3",
       season: "05",
       episode: "14",
       title: "The One Where Everybody Finds Out",
-      description:
-        "One of the most chaotic and hilarious moments in the group.",
+      description: "Phoebe and Chandler's showdown: they don't know that we know they know we know!",
     },
   ],
 
   openWhen: [
     {
       id: "friends-open-1",
-      emoji: "😔",
-      title: "Open when you're feeling sad",
+      emoji: "🌧️",
+      title: "Open when you're feeling sad or down",
+      preview: "A warm cup of coffee and a tight hug are waiting for you inside...",
       description:
-        "Remember that even on the bad days, you always have people who care about you. ❤️",
+        "Take a slow breath. Bad days happen, but they pass. Even in the gloomiest weather, there are warm drinks, cozy blankets, and people who adore you more than you know. You don't have to carry the whole world today.",
+      quote: "I'll be there for you, when the rain starts to pour.",
+      character: "The Central Perk Crew",
+      gif: "https://media.giphy.com/media/VbEC9WchxkiWTL5PFo/giphy.gif",
     },
     {
       id: "friends-open-2",
       emoji: "💪",
-      title: "Open when you need motivation",
+      title: "Open when you need motivation or courage",
+      preview: "When the staircase is narrow and the couch won't fit...",
       description:
-        "You've made it through every difficult day so far. Keep going — you've got this.",
+        "You have solved 100% of your hardest days so far. Whatever challenge is in front of you right now, you have the brains, grace, and courage to get through it. Channel your inner Monica and conquer it!",
+      quote: "Welcome to the real world... you're gonna love it and you're gonna crush it.",
+      character: "Monica Geller",
+      gif: "https://media.giphy.com/media/26FPGI3ZgduhYYVTa/giphy.gif",
     },
     {
       id: "friends-open-3",
-      emoji: "❤️",
-      title: "Open when you miss me",
+      emoji: "😂",
+      title: "Open when you just need a hearty laugh",
+      preview: "Guaranteed serotonin boost inside...",
       description:
-        "Consider this your little reminder that distance doesn't change how much someone means to you.",
+        "Life is way too short to take everything seriously. Drop your shoulders, un-clench your jaw, and let yourself giggle. Here is your reminder to dance like Chandler when nobody (or everybody) is watching!",
+      quote: "Could this smile BE any wider?",
+      character: "Chandler Bing",
+      gif: "https://media.giphy.com/media/fVbVBvONn4OyQ/giphy.gif",
     },
   ],
 
   finalSurprise: {
-    title: "The One With Your Surprise",
+    title: "One Last Scrapbook Souvenir",
     message:
-      "Happy Birthday! If Friends taught us anything, it's that the best moments in life are the ones we share with the people who matter. Here's to many more memories together. ❤️",
+      "Thank you for being such a wonderful person! Whenever life gets loud, remember you always have this comfort scrapbook in your pocket. Here's to health, joy, and endless laughs! ❤️",
   },
 };
 

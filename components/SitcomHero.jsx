@@ -1,61 +1,63 @@
 import { StyleSheet, Text, View } from "react-native";
+import ScrapbookStamp from "./ScrapbookStamp";
+import WashiTape from "./WashiTape";
 
-export default function SitcomHero({ emoji, title, subtitle }) {
+export default function SitcomHero({ emoji, title, subtitle, stamp }) {
   return (
     <View style={styles.container}>
+      <WashiTape color="#FCD34D" width={120} height={26} rotation="-2deg" />
+
       <Text style={styles.emoji}>{emoji}</Text>
 
       <Text style={styles.title}>{title}</Text>
 
       <Text style={styles.subtitle}>{subtitle}</Text>
 
-      <View style={styles.divider} />
+      {stamp ? (
+        <ScrapbookStamp label={stamp} emoji="⭐" color="#92400E" rotation="2deg" />
+      ) : (
+        <ScrapbookStamp label="A Comfort Scrapbook" emoji="⭐" color="#92400E" rotation="2deg" />
+      )}
 
-      <Text style={styles.special}>A Birthday Special</Text>
+      <View style={styles.divider} />
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    paddingVertical: 40,
+    paddingTop: 45,
+    paddingBottom: 20,
     paddingHorizontal: 20,
-    marginBottom: 10,
+    marginBottom: 5,
   },
-
   emoji: {
-    fontSize: 52,
-    marginBottom: 12,
+    fontSize: 54,
+    marginBottom: 10,
+    marginTop: 6,
   },
-
   title: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: "900",
-    letterSpacing: 2,
-    color: "#2b2b2b",
+    letterSpacing: 2.5,
+    color: "#241D17",
+    textAlign: "center",
   },
-
   subtitle: {
     marginTop: 8,
-    fontSize: 15,
+    fontSize: 14,
     textAlign: "center",
-    color: "#77706a",
+    color: "#6D5F52",
+    lineHeight: 21,
+    maxWidth: 340,
     fontStyle: "italic",
   },
-
   divider: {
-    width: 70,
+    width: 60,
     height: 3,
-    backgroundColor: "#d89b00",
-    marginVertical: 20,
+    backgroundColor: "#D97706",
+    marginTop: 18,
     borderRadius: 2,
-  },
-
-  special: {
-    fontSize: 12,
-    fontWeight: "800",
-    letterSpacing: 1.5,
-    color: "#b47c00",
-    textTransform: "uppercase",
   },
 });

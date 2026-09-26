@@ -1,12 +1,15 @@
 import { StyleSheet, Text, View } from "react-native";
+import WashiTape from "./WashiTape";
 
 export default function BirthdayMessage({
-  heading = "The Birthday Message",
+  heading = "A Warm Comfort Note",
   message,
 }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.emoji}>🎂</Text>
+      <WashiTape color="#FDE68A" width={90} height={22} rotation="-1deg" />
+
+      <Text style={styles.emoji}>💌</Text>
 
       <Text style={styles.heading}>{heading}</Text>
 
@@ -16,46 +19,38 @@ export default function BirthdayMessage({
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
     marginTop: 10,
-    marginBottom: 30,
+    marginBottom: 25,
   },
-
   emoji: {
     fontSize: 28,
     marginBottom: 6,
   },
-
   heading: {
     fontSize: 22,
     fontWeight: "800",
-    color: "#2b2b2b",
-    marginBottom: 14,
+    color: "#2C231B",
+    marginBottom: 12,
   },
-
   card: {
-    backgroundColor: "#fff8ef",
-    borderRadius: 20,
-    padding: 24,
-    borderWidth: 1,
-    borderColor: "#eadfce",
-
-    shadowColor: "#8c7355",
-    shadowOffset: {
-      width: 0,
-      height: 3,
-    },
+    backgroundColor: "#FFFDF9",
+    borderRadius: 16,
+    padding: 22,
+    borderWidth: 1.5,
+    borderColor: "#EADCC6",
+    shadowColor: "#4A3927",
+    shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.08,
-    shadowRadius: 8,
-
+    shadowRadius: 6,
     elevation: 2,
   },
-
   message: {
-    fontSize: 16,
-    lineHeight: 27,
-    color: "#514a44",
+    fontSize: 15,
+    lineHeight: 26,
+    color: "#4A3D31",
   },
 });

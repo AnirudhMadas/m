@@ -1,103 +1,73 @@
 import { StyleSheet, Text, View } from "react-native";
+import PolaroidCard from "./PolaroidCard";
 
-export default function FavoriteMoments({ moments }) {
+export default function FavoriteMoments({
+  moments = [],
+  heading = "Scrapbook Highlights",
+  subtitle = "Iconic comfort scenes & memories captured on tape.",
+}) {
+  const rotations = ["-1.5deg", "2deg", "-2deg", "1deg", "-1deg", "2.5deg"];
+  const tapeColors = [
+    "#FCD34D", // yellow
+    "#FCA5A5", // coral pink
+    "#A7F3D0", // soft mint
+    "#BAE6FD", // sky blue
+    "#FED7AA", // peach
+  ];
+
   return (
     <View style={styles.container}>
-      <Text style={styles.emoji}>❤️</Text>
+      <Text style={styles.emoji}>📸</Text>
+      <Text style={styles.heading}>{heading}</Text>
+      {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
 
-      <Text style={styles.heading}>Favorite Moments</Text>
+      <View style={styles.polaroidGrid}>
+        {moments.map((moment, index) => {
+          const rotation = rotations[index % rotations.length];
+          const tapeColor = tapeColors[index % tapeColors.length];
 
-      <Text style={styles.subtitle}>
-        The little moments that became the best memories.
-      </Text>
-
-      <View style={styles.list}>
-        {moments.map((moment, index) => (
-          <View key={index} style={styles.card}>
-            <Text style={styles.cardEmoji}>{moment.emoji}</Text>
-
-            <View style={styles.cardContent}>
-              <Text style={styles.title}>{moment.title}</Text>
-
-              <Text style={styles.description}>{moment.description}</Text>
-            </View>
-          </View>
-        ))}
+          return (
+            <PolaroidCard
+              key={moment.id || index}
+              imageUri={moment.image || moment.gif}
+              caption={moment.title}
+              subtitle={moment.description}
+              rotation={rotation}
+              tapeColor={tapeColor}
+              sticker={moment.sticker || moment.emoji}
+              aspectRatio={moment.aspectRatio || 1.15}
+            />
+          );
+        })}
       </View>
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
-    marginBottom: 30,
+    marginVertical: 15,
   },
-
   emoji: {
     fontSize: 28,
     marginBottom: 6,
+    paddingHorizontal: 20,
   },
-
   heading: {
     fontSize: 22,
     fontWeight: "800",
     color: "#2b2b2b",
+    paddingHorizontal: 20,
   },
-
   subtitle: {
-    marginTop: 6,
+    marginTop: 4,
     marginBottom: 16,
     color: "#77706a",
     fontSize: 14,
-    lineHeight: 21,
+    lineHeight: 20,
+    paddingHorizontal: 20,
   },
-
-  list: {
-    gap: 12,
-  },
-
-  card: {
-    flexDirection: "row",
-    alignItems: "flex-start",
-
-    backgroundColor: "#fff8ef",
-
-    borderRadius: 18,
-    padding: 18,
-
-    borderWidth: 1,
-    borderColor: "#eadfce",
-
-    shadowColor: "#8c7355",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.07,
-    shadowRadius: 6,
-
-    elevation: 2,
-  },
-
-  cardEmoji: {
-    fontSize: 28,
-    marginRight: 14,
-  },
-
-  cardContent: {
-    flex: 1,
-  },
-
-  title: {
-    fontSize: 16,
-    fontWeight: "800",
-    color: "#2b2b2b",
-    marginBottom: 6,
-  },
-
-  description: {
-    fontSize: 14,
-    lineHeight: 21,
-    color: "#77706a",
+  polaroidGrid: {
+    paddingHorizontal: 12,
   },
 });

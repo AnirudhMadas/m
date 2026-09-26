@@ -1,42 +1,115 @@
+import { router } from "expo-router";
+import { useState } from "react";
 import {
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
+import BirthdayEpisode from "./BirthdayEpisode";
+import BirthdayMessage from "./BirthdayMessage";
+import ComfortRoulette from "./ComfortRoulette";
+import EpisodeArchive from "./EpisodeArchive";
+import FavoriteMoments from "./FavoriteMoments";
+import FinalSurprise from "./FinalSurprise";
+import MoodFilter from "./MoodFilter";
+import OpenWhen from "./OpenWhen";
+import SitcomHero from "./SitcomHero";
+import StickyNote from "./StickyNote";
 
-export default function SitcomPageTemplate({
-  title,
-  subtitle,
-  onBack,
-  backgroundColor = "#1a1a2e", // each sitcom will override this later
-  children,
-}) {
+export default function SitcomPageTemplate({ data }) {
+  const [selectedMood, setSelectedMood] = useState("all");
+
+  const filteredMoments =
+    selectedMood === "all"
+      ? data.favoriteMoments
+      : data.favoriteMoments?.filter(
+          (m) => m.mood === selectedMood || !m.mood
+        );
+
   return (
-    <SafeAreaView style={[styles.safeArea, { backgroundColor }]}>
-      {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={onBack} style={styles.backButton}>
-          <Text style={styles.backText}>← Back</Text>
-        </TouchableOpacity>
+    <SafeAreaView style={styles.safeArea}>
+      {/* Top Navigation Bar */}
+      <View style={styles.topNav}>
+        <Pressable
+          style={({ pressed }) => [
+            styles.backButton,
+            pressed && { opacity: 0.7 },
+          ]}
+          onPress={() => router.back()}
+        >
+          <Text style={styles.backButtonText}>← Scrapbook Desk</Text>
+        </Pressable>
+        <Text style={styles.albumTitleText}>{data.hero.title}</Text>
       </View>
 
-      {/* Scrollable content */}
       <ScrollView
         style={styles.scroll}
-        contentContainerStyle={styles.scrollContent}
+        contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Title / Subtitle */}
-        <View style={styles.titleBlock}>
-          <Text style={styles.title}>{title}</Text>
-          {subtitle ? <Text style={styles.subtitle}>{subtitle}</Text> : null}
-        </View>
+        {/* Hero with Stamp & Tape */}
+        <SitcomHero {...data.hero} />
 
-        {/* Everything from Lessons 2–6 will be dropped in here as children */}
-        {children}
+        {/* Mood Selector Filter */}
+        <MoodFilter
+          selectedMood={selectedMood}
+          onSelectMood={setSelectedMood}
+        />
+
+        {/* Character Sticky Notes / Pep Talks */}
+        {data.stickyNotes && data.stickyNotes.length > 0 ? (
+          <View style={styles.stickyNotesSection}>
+            <Text style={styles.sectionHeader}>📌 CHARACTER WISDOM & PEP TALKS</Text>
+            {data.stickyNotes.map((note) => (
+              <StickyNote
+                key={note.id}
+                tag={note.tag}
+                text={note.text}
+                author={note.author}
+                color={note.color}
+                tapeColor={note.tapeColor}
+                rotation={note.rotation}
+              />
+            ))}
+          </View>
+        ) : null}
+
+        {/* Instant Mood Lifter Roulette */}
+        {data.roulette ? (
+          <ComfortRoulette
+            items={data.roulette}
+            title={`🎲 ${data.hero.title} Comfort Roulette`}
+          />
+        ) : null}
+
+        {/* Polaroids / Iconic Moments (GIFs) */}
+        <FavoriteMoments
+          moments={filteredMoments}
+          heading="Scrapbook Moments & GIFs"
+          subtitle={
+            selectedMood === "all"
+              ? "Iconic scenes & comforting moments captured on tape."
+              : `Showing moments tailored for: ${selectedMood.toUpperCase()}`
+          }
+        />
+
+        {/* Open When Interactive Letters */}
+        <OpenWhen cards={data.openWhen} />
+
+        {/* Sitcom Birthday Message */}
+        <BirthdayMessage {...data.birthdayMessage} />
+
+        {/* Birthday Episode Card */}
+        <BirthdayEpisode {...data.birthdayEpisode} />
+
+        {/* Episode Archive */}
+        <EpisodeArchive episodes={data.episodeArchive} />
+
+        {/* Final Surprise Reveal */}
+        <FinalSurprise {...data.finalSurprise} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -45,45 +118,49 @@ export default function SitcomPageTemplate({
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    backgroundColor: "#F8F3E8",
   },
-  header: {
+  topNav: {
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     paddingHorizontal: 16,
     paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: "#EAE0CE",
+    backgroundColor: "#FFFDF9",
   },
   backButton: {
     paddingVertical: 6,
-    paddingHorizontal: 4,
+    paddingHorizontal: 8,
   },
-  backText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "500",
+  backButtonText: {
+    fontSize: 14,
+    fontWeight: "700",
+    color: "#8B4513",
+  },
+  albumTitleText: {
+    fontSize: 12,
+    fontWeight: "800",
+    letterSpacing: 1.5,
+    color: "#6D5F52",
   },
   scroll: {
     flex: 1,
   },
-  scrollContent: {
-    paddingHorizontal: 20,
-    paddingBottom: 40,
+  content: {
+    paddingBottom: 50,
   },
-  titleBlock: {
-    alignItems: "center",
-    marginTop: 12,
-    marginBottom: 24,
+  stickyNotesSection: {
+    marginVertical: 10,
+    paddingHorizontal: 6,
   },
-  title: {
-    fontSize: 28,
-    fontWeight: "800",
-    color: "#fff",
-    textAlign: "center",
-  },
-  subtitle: {
-    fontSize: 14,
-    color: "#cfcfcf",
-    fontStyle: "italic",
-    marginTop: 6,
-    textAlign: "center",
+  sectionHeader: {
+    fontSize: 10,
+    fontWeight: "900",
+    letterSpacing: 1.5,
+    color: "#9C8570",
+    marginLeft: 20,
+    marginBottom: 4,
   },
 });
