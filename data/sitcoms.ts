@@ -5,7 +5,7 @@ const sitcoms = [
     emoji: "☕",
     description: "Could this scrapbook BE any more comforting? Coffee, hugs & Chandler dancing.",
     route: "/friends",
-    tapeColor: "#FCD34D", // warm yellow
+    tapeColor: "#FCD34D",
     rotation: "-1deg",
   },
   {
@@ -14,7 +14,7 @@ const sitcoms = [
     emoji: "🚔",
     description: "Cool cool cool... squad support, Backstreet Boys heists & Holt affirmations.",
     route: "/brooklyn99",
-    tapeColor: "#7DD3FC", // precinct blue
+    tapeColor: "#7DD3FC",
     rotation: "1.5deg",
   },
   {
@@ -23,7 +23,7 @@ const sitcoms = [
     emoji: "📄",
     description: "Dundie awards, camera smiles & Michael Scott reminding you to STAY CALM!",
     route: "/office",
-    tapeColor: "#FED7AA", // soft peach
+    tapeColor: "#FED7AA",
     rotation: "-1.5deg",
   },
   {
@@ -32,7 +32,7 @@ const sitcoms = [
     emoji: "📸",
     description: "Phil's-osophy wisdom, Cam's drama & big warm family hugs.",
     route: "/modernfamily",
-    tapeColor: "#FCA5A5", // coral rose
+    tapeColor: "#FCA5A5",
     rotation: "1deg",
   },
 ];

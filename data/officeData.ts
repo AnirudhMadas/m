@@ -7,13 +7,13 @@ const officeData = {
     emoji: "🏢",
     title: "THE OFFICE",
     subtitle: `The one where Dunder Mifflin awards ${m} the greatest Dundie of all time! 📄`,
-    stamp: `Dunder Mifflin Scranton · Official Award For ${m}`,
+    stamp: `Dunder Mifflin · Birthday Trophy For ${m}`,
   },
 
   birthdayMessage: {
-    heading: `A Scranton Branch Memo For ${m}`,
+    heading: `A Scranton Birthday Note For ${m}`,
     message:
-      `That's what she said... and by 'she', we mean everyone in Scranton wishing ${m} the brightest, coziest, happiest birthday! Today, you are officially the Dundie winner for 'Best Human Being In The Entire Universe'. Happy Birthday, ${m}! 🏆`,
+      `That's what she said... and by 'she', we mean everyone in Scranton wishing ${m} the coziest, happiest birthday! Today, you are officially the Dundie winner for 'Best Human Being In The Entire Universe'. Happy Birthday, ${m}! 🏆`,
   },
 
   birthdaySurprise: {
@@ -21,16 +21,33 @@ const officeData = {
     title: `The Official Dundie Award Ceremony`,
     revealedItem: "🏆✨",
     revealedTitle: `The Dundie Award For Outstanding Human Being!`,
-    gifUri: "https://i.giphy.com/55SfA4BxofRBe.gif",
+    gifUri: "https://i.giphy.com/92hAb1nIitH1u.gif",
     revealedMessage:
-      `Michael Scott takes the microphone at Chili's: '${m}! You have won the most prestigious honor in paper company history! You bring warmth, kindness, and incredible energy to everyone around you.' Pam feels God in this room tonight!`,
+      `Michael Scott steps up to the mic at Chili's: '${m}! You have won the most prestigious honor in Scranton history! You bring warmth, kindness, and incredible energy to everyone around you.' Pam feels God in this room tonight!`,
   },
+
+  cuteClips: [
+    {
+      id: "off-clip-1",
+      title: "Jim & Pam's Sweetest Story",
+      subtitle: "The cutest, most wholesome moments in Dunder Mifflin 💛",
+      youtubeId: "QDjRyY8Feks",
+      emoji: "☕",
+    },
+    {
+      id: "off-clip-2",
+      title: "Jim & Pam: Unforgettable Moments",
+      subtitle: "Pure heartwarming comfort from Dunder Mifflin 🏆",
+      youtubeId: "GivFpU7eegs",
+      emoji: "🎉",
+    },
+  ],
 
   stickyNotes: [
     {
       id: "off-n1",
       tag: `Michael's Note To ${m}`,
-      text: `Never, for any reason, do anything, to anyone, for any reason... wait, what I meant is: ${m}, you are brilliant, hilarious, and doing an amazing job. Happy Birthday!`,
+      text: `Never, for any reason, do anything, to anyone... wait, what I meant is: ${m}, you are brilliant, hilarious, and doing an amazing job. Happy Birthday!`,
       author: "Michael Scott",
       color: "#FEF3C7",
       tapeColor: "#FCD34D",
@@ -59,66 +76,60 @@ const officeData = {
   favoriteMoments: [
     {
       id: "office-1",
-      title: "The Jim Halpert Camera Glance",
-      description: `That knowing look when the world is chaotic, but ${m} is handling it like a pro.`,
-      gif: "https://i.giphy.com/1Z02vuppxP1Pa.gif",
-      emoji: "😏",
+      title: "Jim & Pam's Sweet Smile",
+      description: "That unmistakable warm smile that makes all the chaos fade away.",
+      gif: "https://i.giphy.com/EMFxuIPeomTGE.gif",
+      emoji: "💛",
       sticker: "☕",
       mood: "comfort",
     },
     {
       id: "office-2",
-      title: "Michael Scott's Pure Joy",
-      description: `Michael celebrating because today is officially ${m}'s birthday!`,
-      gif: "https://i.giphy.com/55SfA4BxofRBe.gif",
-      emoji: "🎉",
-      sticker: "✨",
+      title: "The Scranton Celebration",
+      description: "When the whole office celebrates with pure joy!",
+      gif: "https://i.giphy.com/jp7jSyjNNz2ansuOS8.gif",
+      emoji: "🥳",
+      sticker: "🏆",
       mood: "laugh",
     },
     {
       id: "office-3",
-      title: "The Scranton Celebration",
-      description: "When the whole office puts aside their quirks and unites in joy.",
-      gif: "https://i.giphy.com/jp7jSyjNNz2ansuOS8.gif",
-      emoji: "🥳",
-      sticker: "🏆",
-      mood: "pep",
+      title: "Michael Scott's Heartfelt 'Thank You!'",
+      description: `Michael stepping up to say a sincere thank you for being such a wonderful person, ${m}.`,
+      gif: "https://i.giphy.com/1Z02vuppxP1Pa.gif",
+      emoji: "🙏",
+      sticker: "✨",
+      mood: "comfort",
     },
     {
       id: "office-4",
-      title: "Wholesome Office Moments",
-      description: `Surrounding ${m} with laughter, high fives, and comfort.`,
-      gif: "https://i.giphy.com/WPRJfpqxa9RF6.gif",
-      emoji: "🤝",
+      title: "Pam's Warm Smile",
+      description: "Gentle happiness and genuine affection from Pam Beesly to brighten your day.",
+      gif: "https://i.giphy.com/A6eZZGnk3r0BuMWIrk.gif",
+      emoji: "🌸",
       sticker: "❤️",
-      mood: "comfort",
+      mood: "pep",
     },
   ],
 
   roulette: [
     {
       id: "off-r1",
-      title: "The Classic Jim Look",
-      quote: `You make every regular day a whole lot brighter, ${m}.`,
-      gif: "https://i.giphy.com/1Z02vuppxP1Pa.gif",
+      title: "Andy Bernard's Party Excitement",
+      quote: `Roo-doo-doot-da-doo! Have the absolute happiest birthday ever, ${m}!`,
+      gif: "https://i.giphy.com/r8I7tDl75QLfh2SkpE.gif",
     },
     {
       id: "off-r2",
-      title: "Michael Proud Moment",
-      quote: `I am proud of you, ${m}. That's what she said.`,
+      title: "Michael's Golden Finger Guns",
+      quote: `Ayyy! You are doing amazing, ${m}! That's what she said.`,
       gif: "https://i.giphy.com/55SfA4BxofRBe.gif",
     },
     {
       id: "off-r3",
-      title: "Scranton High Spirits",
-      quote: "No celebration is complete without excessive Dundie glory!",
-      gif: "https://i.giphy.com/jp7jSyjNNz2ansuOS8.gif",
-    },
-    {
-      id: "off-r4",
-      title: "Office Happiness",
-      quote: "There's a lot of beauty in ordinary things. Isn't that kind of the point?",
-      gif: "https://i.giphy.com/WPRJfpqxa9RF6.gif",
+      title: "Stanley's Rare Laugh",
+      quote: "When life is good, you just have to laugh and smile!",
+      gif: "https://i.giphy.com/ei0E9JEqlOT54BI4fk.gif",
     },
   ],
 
@@ -127,73 +138,49 @@ const officeData = {
     episode: "19",
     title: `The Dundie Award Banquet For ${m}`,
     description:
-      `Michael reserves Chili's for the night, sets up an excessive microphone, and presents ${m} with the most coveted golden trophy in Dunder Mifflin history.`,
+      `Michael reserves Chili's for the night, sets up the microphone, and presents ${m} with the most coveted golden trophy in history.`,
   },
-
-  episodeArchive: [
-    {
-      id: "office-ep1",
-      season: "05",
-      episode: "14",
-      title: "Stress Relief (Part 1)",
-      description: "Dwight's fire drill, CPR training, and pure comedic mayhem from start to finish.",
-    },
-    {
-      id: "office-ep2",
-      season: "02",
-      episode: "01",
-      title: "The Dundies",
-      description: "Pam feels God in this Chili's tonight. The ultimate wholesome comfort watch.",
-    },
-    {
-      id: "office-ep3",
-      season: "04",
-      episode: "13",
-      title: "Dinner Party",
-      description: "Awkward humor elevated to high art. Michael showing off his tiny plasma TV.",
-    },
-  ],
 
   openWhen: [
     {
       id: "office-open-1",
       emoji: "🌧️",
       title: "Open when work or life feels overwhelming",
-      preview: "Jim and Pam have a grounding reminder for you...",
+      preview: "Michael Scott calling an official company time-out...",
       description:
-        `Take a slow breath, ${m}, and give the imaginary camera a gentle smile. Half the noise around you isn't yours to fix. You are capable, steady, and doing just fine.`,
-      quote: "There's a lot of beauty in ordinary things. Isn't that kind of the point?",
-      character: "Pam Beesly",
-      gif: "https://i.giphy.com/1Z02vuppxP1Pa.gif",
+        `Time out, ${m}! Put down whatever you are stressing about. Step away from the screen, take a deep breath, and remember that nothing is more important than your peace of mind.`,
+      quote: "Time out! Nobody panic, nobody stress!",
+      character: "Michael Scott",
+      gif: "https://i.giphy.com/CZGcUfnAy3ayJw2eZX.gif",
     },
     {
       id: "office-open-2",
       emoji: "💪",
       title: "Open when you need confidence and fire",
-      preview: "Channeling Dwight Schrute's indestructible determination...",
+      preview: "Jim Halpert cheering you on with a big YES...",
       description:
-        `You miss 100% of the shots you don't take — Wayne Gretzky — Michael Scott. Go out there and take your shot, ${m}! You have twice the determination and five times the charm of anyone in the room!`,
-      quote: "I am ready to face any challenge that might be foolish enough to face me.",
-      character: "Dwight K. Schrute",
-      gif: "https://i.giphy.com/jp7jSyjNNz2ansuOS8.gif",
+        `You've got this, ${m}! When the imposter syndrome creeps in, remember how much capability and smarts you bring to the table.`,
+      quote: "Yes! Absolutely, 100% yes!",
+      character: "Jim Halpert",
+      gif: "https://i.giphy.com/ffJ6aDa3WnglqxiLRN.gif",
     },
     {
       id: "office-open-3",
       emoji: "😂",
       title: "Open when you need comic relief right now",
-      preview: "Michael Scott is here to make you smile...",
+      preview: "Kevin Malone bringing pure celebration hype...",
       description:
-        `If Michael Scott can survive George Foreman grills, GPS lakes, and dinner parties... you can breeze through whatever little bump happened today, ${m}!`,
-      quote: "Today is a day for smiles, happiness, and celebrations!",
-      character: "Michael Scott",
-      gif: "https://i.giphy.com/55SfA4BxofRBe.gif",
+        `When life gets serious, channel your inner Kevin. Drop your shoulders, grab your favorite treat, and let yourself enjoy the moment without overthinking!`,
+      quote: "It is a celebration! It is pure greatness!",
+      character: "Kevin Malone",
+      gif: "https://i.giphy.com/Hm3rh1nMYe9BR20ThG.gif",
     },
   ],
 
   finalSurprise: {
-    title: `Official Scranton Certification For ${m}`,
+    title: `A Golden Dundie Just For ${m} 💛`,
     message:
-      `By authority vested in Dunder Mifflin, ${m} has been declared an indispensable source of joy, humor, and goodness in this world. Keep smiling into the camera! Happy Birthday, ${m}! 📄✨`,
+      `Happy Birthday, ${m}! You are declared the most indispensable source of joy, humor, and goodness in this world. Never forget to look into the camera and smile! 📄✨`,
   },
 };
 

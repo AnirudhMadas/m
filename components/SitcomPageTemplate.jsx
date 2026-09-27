@@ -11,10 +11,13 @@ import {
 import BirthdayEpisode from "./BirthdayEpisode";
 import BirthdayMessage from "./BirthdayMessage";
 import ComfortRoulette from "./ComfortRoulette";
-import EpisodeArchive from "./EpisodeArchive";
+import CuteClipsSection from "./CuteClipsSection";
+import DoodleScatter from "./DoodleScatter";
+import DoodleSticker from "./DoodleSticker";
 import FavoriteMoments from "./FavoriteMoments";
 import FinalSurprise from "./FinalSurprise";
 import MoodFilter from "./MoodFilter";
+import MoodReactionCard from "./MoodReactionCard";
 import MysteryGiftBox from "./MysteryGiftBox";
 import OpenWhen from "./OpenWhen";
 import SitcomHero from "./SitcomHero";
@@ -41,7 +44,7 @@ export default function SitcomPageTemplate({ data }: { data: any }) {
           ]}
           onPress={() => router.back()}
         >
-          <Text style={styles.backButtonText}>← Scrapbook Desk</Text>
+          <Text style={styles.backButtonText}>← Back to Scrapbook Desk</Text>
         </Pressable>
         <Text style={styles.albumTitleText}>{data.hero.title}</Text>
       </View>
@@ -51,8 +54,12 @@ export default function SitcomPageTemplate({ data }: { data: any }) {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        {/* Hero with Stamp & Tape */}
+        {/* Hero Header */}
         <SitcomHero {...data.hero} />
+
+        {/* Doodle Sticker Cluster */}
+        <DoodleScatter preset="birthday" />
+
 
         {/* Show-Specific Birthday Surprise Gift Box */}
         {data.birthdaySurprise ? (
@@ -66,16 +73,32 @@ export default function SitcomPageTemplate({ data }: { data: any }) {
           />
         ) : null}
 
-        {/* Mood Selector Filter */}
+        {/* How are you feeling right now? Mood Filter */}
         <MoodFilter
           selectedMood={selectedMood}
           onSelectMood={setSelectedMood}
         />
 
-        {/* Character Sticky Notes / Pep Talks */}
+        {/* Dynamic Immediate Mood Response Card */}
+        <MoodReactionCard
+          mood={selectedMood}
+          showTitle={data.hero.title}
+          onClear={() => setSelectedMood("all")}
+        />
+
+        {/* Cute & Comfort Video Clips */}
+        {data.cuteClips ? <CuteClipsSection clips={data.cuteClips} /> : null}
+
+        {/* Doodle Break */}
+        <DoodleScatter preset="fun" />
+
+        {/* Character Notes & Pep Talks */}
         {data.stickyNotes && data.stickyNotes.length > 0 ? (
           <View style={styles.stickyNotesSection}>
-            <Text style={styles.sectionHeader}>📌 CHARACTER WISDOM & PEP TALKS</Text>
+            <View style={styles.notesHeaderRow}>
+              <Text style={styles.sectionHeader}>📌 NOTES & PEP TALKS FOR YOU</Text>
+              <DoodleSticker type="heart" text="comfort" color="#BE185D" bg="#FCE7F3" rotation="2deg" />
+            </View>
             {data.stickyNotes.map((note: any) => (
               <StickyNote
                 key={note.id}
@@ -104,10 +127,13 @@ export default function SitcomPageTemplate({ data }: { data: any }) {
           heading="Scrapbook Moments & GIFs"
           subtitle={
             selectedMood === "all"
-              ? "Iconic scenes & comforting moments captured on tape."
-              : `Showing moments tailored for: ${selectedMood.toUpperCase()}`
+              ? "Comfort scenes & cute moments captured on tape."
+              : `Showing scenes for when you need: ${selectedMood.toUpperCase()}`
           }
         />
+
+        {/* Doodle Break */}
+        <DoodleScatter preset="cozy" />
 
         {/* Open When Interactive Letters */}
         <OpenWhen cards={data.openWhen} />
@@ -115,11 +141,8 @@ export default function SitcomPageTemplate({ data }: { data: any }) {
         {/* Sitcom Birthday Message */}
         <BirthdayMessage {...data.birthdayMessage} />
 
-        {/* Birthday Episode Card */}
+        {/* Birthday Episode Tribute Card */}
         <BirthdayEpisode {...data.birthdayEpisode} />
-
-        {/* Episode Archive */}
-        <EpisodeArchive episodes={data.episodeArchive} />
 
         {/* Final Surprise Reveal */}
         <FinalSurprise {...data.finalSurprise} />
@@ -164,6 +187,13 @@ const styles = StyleSheet.create({
   content: {
     paddingBottom: 50,
   },
+  notesHeaderRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    paddingHorizontal: 16,
+    marginBottom: 4,
+  },
   stickyNotesSection: {
     marginVertical: 10,
     paddingHorizontal: 6,
@@ -173,7 +203,6 @@ const styles = StyleSheet.create({
     fontWeight: "900",
     letterSpacing: 1.5,
     color: "#9C8570",
-    marginLeft: 20,
-    marginBottom: 4,
+    marginLeft: 6,
   },
 });

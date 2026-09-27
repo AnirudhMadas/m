@@ -6,31 +6,48 @@ const brooklyn99Data = {
   hero: {
     emoji: "🕵️",
     title: "BROOKLYN NINE-NINE",
-    subtitle: `The one where the Nine-Nine squad celebrates ${m}'s birthday with elite hype! 🚔`,
-    stamp: `Nine-Nine Precinct · Special Birthday Order For ${m}`,
+    subtitle: `The one where the Nine-Nine squad celebrates ${m}'s birthday with all the hype! 🚔`,
+    stamp: `Nine-Nine · Special Birthday Edition For ${m}`,
   },
 
   birthdayMessage: {
-    heading: `Captain Holt's Official Birthday Dispatch For ${m}`,
+    heading: `A Birthday Cheer For ${m}`,
     message:
-      `Attention Detective ${m}: by executive authority of the 99th Precinct, today is an officially declared holiday. Whether you need elite laughs, unconditional squad backup, or a proud salute, the entire Nine-Nine is on your team. Happy Birthday, ${m}! Cool cool cool! 🎉`,
+      `Happy Birthday, ${m}! The whole squad gathered today with party hats, confetti, and big hugs. Whether you need an elite laugh, unconditional squad backup, or a smile from Cheddar the dog, we are always cheering for you. Have an amazing day! 🎉`,
   },
 
   birthdaySurprise: {
     tag: `SURPRISE GIFT #2 FOR ${m}`,
-    title: `The Ultimate Detective / Human Badge`,
-    revealedItem: "🎖️🛡️",
-    revealedTitle: `Captain Holt's Medal of Honor & Golden Badge!`,
-    gifUri: "https://i.giphy.com/lp0D8EezWMXBhcQygb.gif",
+    title: `The Ultimate Detective / Human Award`,
+    revealedItem: "🎖️🐕",
+    revealedTitle: `Captain Holt's Golden Badge & Cheddar's Seal of Approval!`,
+    gifUri: "https://i.giphy.com/xT9DPzgJqzHkSgh572.gif",
     revealedMessage:
-      `Captain Raymond Holt hereby proclaims: '${m}, you are an extraordinary human being and an indispensable light. We have concluded our investigation and determined that you are 100% phenomenal.' Hot damn!`,
+      `Captain Holt cleared his throat and smiled: '${m}, you are an extraordinary human being. Cheddar even agreed to let you pet his ears.' You're an absolute legend, ${m}!`,
   },
+
+  cuteClips: [
+    {
+      id: "b99-clip-1",
+      title: "The Iconic 'I Want It That Way' Lineup",
+      subtitle: "The greatest, funniest cold open ever made 🎶",
+      youtubeId: "HlBYdiXdUa8",
+      emoji: "🎤",
+    },
+    {
+      id: "b99-clip-2",
+      title: "Tell Me Why! (Full Squad Singalong)",
+      subtitle: "Number five killed my brother! Classic B99 🚔",
+      youtubeId: "ffyKY3Dj5ZE",
+      emoji: "🐕",
+    },
+  ],
 
   stickyNotes: [
     {
       id: "b99-n1",
-      tag: `Captain Holt's Note To ${m}`,
-      text: `Every time someone steps up and shines like you do, ${m}, the world becomes a better, more interesting place. I am profoundly proud to know you.`,
+      tag: `Captain Holt's Sweet Words`,
+      text: `Every time someone steps up and shines as brightly as you do, ${m}, the world becomes a better, kinder place. I am very proud to know you.`,
       author: "Captain Raymond Holt",
       color: "#FEF3C7",
       tapeColor: "#FCD34D",
@@ -38,8 +55,8 @@ const brooklyn99Data = {
     },
     {
       id: "b99-n2",
-      tag: `Gina's Official Birthday Mandate`,
-      text: `Listen to me, ${m}: walk into every room this year like the superstar you are. The world is your stage and you are the main event!`,
+      tag: `Gina's Confidence Boost`,
+      text: `Listen to me, ${m}: walk into this new year like the superstar you are. The world is your stage and you are the main character!`,
       author: "Gina Linetti",
       color: "#FCE7F3",
       tapeColor: "#F472B6",
@@ -47,8 +64,8 @@ const brooklyn99Data = {
     },
     {
       id: "b99-n3",
-      tag: `Jake Peralta's Hype Note`,
-      text: `Cool cool cool cool cool! Happy Birthday, ${m}! No case is unsolvable and no bad day lasts forever. You're an absolute legend!`,
+      tag: `Jake's Optimism Rule`,
+      text: `Cool cool cool cool cool! Happy Birthday, ${m}! No tricky day lasts forever and no problem is too big. You've got this!`,
       author: "Jake Peralta",
       color: "#E0F2FE",
       tapeColor: "#38BDF8",
@@ -59,36 +76,36 @@ const brooklyn99Data = {
   favoriteMoments: [
     {
       id: "b99-1",
-      title: "Cool Cool Cool Cool Cool",
-      description: `Jake's official reminder that ${m} can handle whatever comes her way with style.`,
-      gif: "https://i.giphy.com/l41lI4bYmcsPJX9Go.gif",
+      title: "Jake Peralta's Big Smile",
+      description: `Jake smiling from ear to ear because today is officially ${m}'s birthday!`,
+      gif: "https://i.giphy.com/d2ZeMUDQSSsCP9FC.gif",
       emoji: "😎",
-      sticker: "🚔",
-      mood: "comfort",
+      sticker: "✨",
+      mood: "pep",
     },
     {
       id: "b99-2",
-      title: "Captain Holt's Sincere Smile",
-      description: "A rare display of pure, proud happiness to brighten your day.",
-      gif: "https://i.giphy.com/lp0D8EezWMXBhcQygb.gif",
+      title: "Terry's Happy Dance",
+      description: "Terry loves yogurt, and Terry definitely loves celebrating your birthday with high energy!",
+      gif: "https://i.giphy.com/yoJC2Kvz5mipkBYeHK.gif",
+      emoji: "💪",
+      sticker: "🎉",
+      mood: "laugh",
+    },
+    {
+      id: "b99-3",
+      title: "Captain Holt's Rare Cheer",
+      description: "A display of raw, pure happiness from Captain Holt in your honor.",
+      gif: "https://i.giphy.com/3o8doT5DaMjfH3paHC.gif",
       emoji: "🫡",
       sticker: "⭐",
       mood: "pep",
     },
     {
-      id: "b99-3",
-      title: "The Nine-Nine Celebration",
-      description: "The squad gathering together with full excitement and energy.",
-      gif: "https://i.giphy.com/KxiRwO7tqXCTDVKobo.gif",
-      emoji: "🎉",
-      sticker: "🔥",
-      mood: "laugh",
-    },
-    {
       id: "b99-4",
-      title: "Squad Unstoppable Joy",
-      description: `Surrounding ${m} with the most supportive squad in television history.`,
-      gif: "https://i.giphy.com/jslzBnsMtVd6UX9D0v.gif",
+      title: "The Nine-Nine Celebration",
+      description: `Surrounding ${m} with unconditional friendship and squad joy.`,
+      gif: "https://i.giphy.com/KxiRwO7tqXCTDVKobo.gif",
       emoji: "🤝",
       sticker: "💙",
       mood: "comfort",
@@ -98,27 +115,21 @@ const brooklyn99Data = {
   roulette: [
     {
       id: "b99-r1",
-      title: "Cool Cool Cool",
-      quote: `Cool cool cool cool cool, tight tight tight! Happy Birthday, ${m}!`,
-      gif: "https://i.giphy.com/l41lI4bYmcsPJX9Go.gif",
+      title: "Squad Hug",
+      quote: "Celebrating our favorite person with full Nine-Nine backup!",
+      gif: "https://i.giphy.com/dQpx1nP9mgUqzB33Tt.gif",
     },
     {
       id: "b99-r2",
-      title: "Captain Holt's Pride",
-      quote: `You are an extraordinary person, ${m}.`,
-      gif: "https://i.giphy.com/lp0D8EezWMXBhcQygb.gif",
+      title: "Boyle Thumbs Up",
+      quote: `You are the finest detective-genius around, ${m}!`,
+      gif: "https://i.giphy.com/l3vQXwChIYsoq4YU0.gif",
     },
     {
       id: "b99-r3",
-      title: "Squad High Spirits",
-      quote: "Nine-Nine! All hands on deck to celebrate you!",
-      gif: "https://i.giphy.com/KxiRwO7tqXCTDVKobo.gif",
-    },
-    {
-      id: "b99-r4",
-      title: "The Victory Cheer",
-      quote: "Bingpot! That's what we call a birthday triumph!",
-      gif: "https://i.giphy.com/3o8doT5DaMjfH3paHC.gif",
+      title: "Captain Holt's Proud Smile",
+      quote: `I am feeling an emotion right now. It is genuine pride in you, ${m}.`,
+      gif: "https://i.giphy.com/YBIgxUGjCJjbSh3On2.gif",
     },
   ],
 
@@ -127,73 +138,49 @@ const brooklyn99Data = {
     episode: "14",
     title: `The Ultimate Birthday Heist for ${m}`,
     description:
-      `Jake, Holt, and the entire squad orchestrate a legendary heist to steal all the smiles and deliver the most memorable birthday celebration ever to ${m}.`,
+      `Jake, Holt, and the entire squad plan a cute heist to deliver the sweetest birthday cake and endless laughs directly to ${m}.`,
   },
-
-  episodeArchive: [
-    {
-      id: "b99-ep1",
-      season: "05",
-      episode: "17",
-      title: "DFW (The Backstreet Boys Lineup)",
-      description: "It was number five. Number five killed my brother. Iconic comedy gold.",
-    },
-    {
-      id: "b99-ep2",
-      season: "05",
-      episode: "14",
-      title: "The Box",
-      description: "Jake and Holt in a battle of wits with Sterling K. Brown. 10/10 perfection.",
-    },
-    {
-      id: "b99-ep3",
-      season: "04",
-      episode: "05",
-      title: "Halloween IV",
-      description: "The heists where absolute unhinged chaos meets pure squad affection.",
-    },
-  ],
 
   openWhen: [
     {
       id: "b99-open-1",
       emoji: "🌧️",
       title: "Open when you're overwhelmed or feeling low",
-      preview: "Captain Holt has an official memo for you...",
+      preview: "Boyle ready to shower you with gourmet comfort...",
       description:
-        `Attention ${m}: whatever has knocked your spirits down today does not define your capabilities. Take a breath. Even the sharpest detectives encounter obstacles. You have an entire squad rooting for you, always.`,
-      quote: "Every time you feel small, remember: you are an extraordinary human being.",
-      character: "Captain Raymond Holt",
-      gif: "https://i.giphy.com/lp0D8EezWMXBhcQygb.gif",
+        `Take a breath, ${m}! Charles Boyle is here to remind you that you are an absolute treasure. Wrap yourself up in a warm blanket, eat something delicious, and let the squad handle the rest.`,
+      quote: "You are the center of our squad, M. We've got your back forever!",
+      character: "Charles Boyle",
+      gif: "https://i.giphy.com/KAKgpCLJDnzeU.gif",
     },
     {
       id: "b99-open-2",
       emoji: "💪",
       title: "Open when you need motivation to tackle a goal",
-      preview: "Peralta is ready to hype you up...",
+      preview: "Sergeant Terry bringing pure powerhouse motivation...",
       description:
-        `You've tackled difficult exams, weird moments, and tricky days, ${m}. This challenge is just another case waiting to be cracked. Put on your game face and show them what an absolute genius looks like!`,
-      quote: "Cool cool cool cool cool. No doubt no doubt, you've got this.",
-      character: "Jake Peralta",
-      gif: "https://i.giphy.com/l41lI4bYmcsPJX9Go.gif",
+        `Terry believes in you, ${m}! Every challenge in front of you is just waiting to be crushed. Put on your game face and go get it!`,
+      quote: "Tiny steps lead to big victories. Terry knows you can do this!",
+      character: "Terry Jeffords",
+      gif: "https://i.giphy.com/sKF481S11DIYg.gif",
     },
     {
       id: "b99-open-3",
       emoji: "😂",
       title: "Open when you need an immediate smile & cheer",
-      preview: "The Nine-Nine victory horn is sounding...",
+      preview: "Emergency joy dispatch for M...",
       description:
-        `Stop what you're doing right now, ${m}. Shake out your shoulders, take a goofy deep breath, and let the Nine-Nine joy take over! Life is meant to be enjoyed, detective!`,
+        `Shake out your shoulders, take a goofy deep breath, and let the Nine-Nine joy take over, ${m}! Life is meant to be enjoyed!`,
       quote: "Nine-Nine! Best squad, best moments!",
       character: "The 99th Precinct",
-      gif: "https://i.giphy.com/KxiRwO7tqXCTDVKobo.gif",
+      gif: "https://i.giphy.com/jslzBnsMtVd6UX9D0v.gif",
     },
   ],
 
   finalSurprise: {
-    title: `Mission Accomplished, ${m}!`,
+    title: `You Are Extraordinary, ${m}!`,
     message:
-      `Case closed! You are officially crowned the Ultimate Human / Genius of the year. Keep shining, smiling, and bringing laughter wherever you go. Happy Birthday, ${m}! Nine-Nine! 🎉`,
+      `Mission accomplished! You are officially crowned the Ultimate Human / Genius of the year. Keep smiling, laughing, and spreading your warmth. Happy Birthday, ${m}! Nine-Nine! 🎉`,
   },
 };
 

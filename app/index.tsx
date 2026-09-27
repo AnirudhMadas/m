@@ -2,6 +2,9 @@ import { router } from "expo-router";
 import { useState } from "react";
 import { FlatList, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import BirthdayCakeWish from "../components/BirthdayCakeWish";
+import DoodleScatter from "../components/DoodleScatter";
+import DoodleSticker from "../components/DoodleSticker";
+import PersonalFriendLetter from "../components/PersonalFriendLetter";
 import ScrapbookStamp from "../components/ScrapbookStamp";
 import SitcomCard from "../components/SitcomCard";
 import WashiTape from "../components/WashiTape";
@@ -33,27 +36,39 @@ export default function HomeScreen() {
             <View style={styles.giftTag}>
               <View style={styles.giftTagHole} />
               <Text style={styles.giftTagTo}>TO: {BIRTHDAY_CONFIG.recipientName} 🎀</Text>
-              <Text style={styles.giftTagFrom}>FROM: {BIRTHDAY_CONFIG.giftTagFrom} 🎁</Text>
+              <Text style={styles.giftTagFrom}>FROM: {BIRTHDAY_CONFIG.giftTagFrom} 💛</Text>
             </View>
 
             <Text style={styles.headerEmoji}>🎂🎁✨</Text>
             <Text style={styles.mainTitle}>{BIRTHDAY_CONFIG.fullTitle}</Text>
             <Text style={styles.subtitle}>
-              {BIRTHDAY_CONFIG.birthdayTagline} Open these albums for endless comfort, laughs, and birthday surprises!
+              {BIRTHDAY_CONFIG.birthdayTagline}
             </Text>
 
+            <View style={styles.doodleRow}>
+              <DoodleSticker type="ribbon" text="birthday edition" color="#BE185D" bg="#FCE7F3" rotation="-3deg" />
+              <DoodleSticker type="star" text="100% wholesome" color="#B45309" bg="#FEF3C7" rotation="2deg" />
+            </View>
+
             <ScrapbookStamp
-              label={`Official Birthday Present For ${BIRTHDAY_CONFIG.recipientName}`}
-              emoji="👑"
+              label={`Made With Love For ${BIRTHDAY_CONFIG.recipientName}`}
+              emoji="💛"
               color="#BE185D"
               rotation="1.5deg"
             />
+
+            {/* Personal Heartfelt Friend Letter */}
+            <PersonalFriendLetter />
+
+            {/* Doodle Divider */}
+            <DoodleScatter preset="birthday" />
 
             {/* Interactive Birthday Cake with Candles */}
             <BirthdayCakeWish />
 
             <View style={styles.shelfHeader}>
-              <Text style={styles.shelfTitle}>CHOOSE A BIRTHDAY ALBUM TO OPEN</Text>
+              <Text style={styles.shelfTitle}>CHOOSE AN ALBUM TO OPEN</Text>
+              <Text style={styles.shelfSubtitle}>Pick a show to dive into its cozy moments, clips & surprises</Text>
             </View>
           </View>
         }
@@ -73,8 +88,9 @@ export default function HomeScreen() {
         ItemSeparatorComponent={() => <View style={{ height: 4 }} />}
         ListFooterComponent={
           <View style={styles.footerBlock}>
+            <DoodleSticker type="heart" text="always here for you" color="#BE185D" bg="#FDF2F8" rotation="-2deg" />
             <Text style={styles.footerNote}>
-              Save this gift link & visit anytime: on good days, tough days, or whenever you want a warm laugh, {BIRTHDAY_CONFIG.recipientName}. 🌻💛
+              Save this link on your phone or computer and come back whenever you need a warm hug, a quick laugh, or just some peace. Happy Birthday, {BIRTHDAY_CONFIG.recipientName}! 🌻💛
             </Text>
           </View>
         }
@@ -156,16 +172,27 @@ const styles = StyleSheet.create({
     maxWidth: 340,
     marginBottom: 8,
   },
+  doodleRow: {
+    flexDirection: "row",
+    gap: 8,
+    marginVertical: 4,
+  },
   shelfHeader: {
-    marginTop: 20,
-    marginBottom: 4,
+    marginTop: 24,
+    marginBottom: 8,
     alignSelf: "flex-start",
+    width: "100%",
   },
   shelfTitle: {
-    fontSize: 11,
+    fontSize: 12,
     fontWeight: "900",
     letterSpacing: 1.5,
     color: "#9C8570",
+  },
+  shelfSubtitle: {
+    fontSize: 12,
+    color: "#786B5D",
+    marginTop: 2,
   },
   footerBlock: {
     marginTop: 30,
@@ -175,11 +202,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   footerNote: {
-    fontSize: 12,
+    fontSize: 13,
     color: "#8C7C6D",
     textAlign: "center",
-    lineHeight: 18,
+    lineHeight: 20,
     fontStyle: "italic",
     maxWidth: 320,
+    marginTop: 10,
   },
 });

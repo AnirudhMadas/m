@@ -6,31 +6,48 @@ const friendsData = {
   hero: {
     emoji: "☕",
     title: "FRIENDS",
-    subtitle: `The one where we celebrate ${m}'s birthday with all our love! 🎂`,
-    stamp: `Central Perk Blend · Crafted For ${m}`,
+    subtitle: `The one where we celebrate ${m}'s birthday with warm laughs & comfort! 🎂`,
+    stamp: `Central Perk · Reserved Just For ${m}`,
   },
 
   birthdayMessage: {
-    heading: `A Birthday Hug For ${m}`,
+    heading: `A Birthday Cheer For ${m}`,
     message:
-      `Could ${m}'s birthday BE any more special? Six friends, countless memories, and one incredible person we are celebrating today. Whenever life gets loud or you need a smile, consider this your permanent spot on the Central Perk orange couch. Happy Birthday, ${m}! ❤️`,
+      `Could ${m}'s birthday BE any more special? Six friends, countless cozy memories, and one wonderful person we are celebrating today. Whenever life gets loud or you need a smile, consider this your permanent spot on the Central Perk orange couch. Happy Birthday, ${m}! ❤️`,
   },
 
   birthdaySurprise: {
     tag: `SURPRISE GIFT #1 FOR ${m}`,
     title: `The Central Perk Birthday Gift`,
-    revealedItem: "☕🏆",
-    revealedTitle: `The Geller Cup & Lifetime Central Perk Pass!`,
+    revealedItem: "☕🛋️",
+    revealedTitle: `Chandler & Joey's Victory Hug & Lifetime Central Perk Pass!`,
     gifUri: "https://i.giphy.com/26FPGI3ZgduhYYVTa.gif",
     revealedMessage:
-      `Congratulations, ${m}! Monica has officially awarded you the coveted Geller Cup, Gunther has reserved the velvet couch exclusively for you, and Phoebe wrote a song in your honor! You are the sweetest friend anyone could ever ask for.`,
+      `Gunther saved the velvet couch for you, Monica baked your favorite treats, and Chandler & Joey are doing their iconic victory celebration hug! You bring so much good energy to everyone around you, ${m}.`,
   },
+
+  cuteClips: [
+    {
+      id: "f-clip-1",
+      title: "The Iconic Fountain Opening",
+      subtitle: "'I'll Be There For You' — pure comfort ☕",
+      youtubeId: "s2TyVQGoCYo",
+      emoji: "⛲",
+    },
+    {
+      id: "f-clip-2",
+      title: "Joey Doesn't Share Food!",
+      subtitle: "The classic hilarious Joey moment to make you giggle 🍕",
+      youtubeId: "dGLObch14e4",
+      emoji: "🍕",
+    },
+  ],
 
   stickyNotes: [
     {
       id: "fn-1",
       tag: "Monica's Rule For M",
-      text: `Welcome to another fabulous year of life, ${m}! You are organized, resilient, and way stronger than you think. Keep being incredible.`,
+      text: `Welcome to another year of life, ${m}! You are organized, kind, and way stronger than you think. Keep shining!`,
       author: "Monica Geller",
       color: "#FEF3C7",
       tapeColor: "#FCD34D",
@@ -39,7 +56,7 @@ const friendsData = {
     {
       id: "fn-2",
       tag: "Joey's Golden Advice",
-      text: `Whenever you feel tired or stressed, ${m}: order your favorite food, take a nap, and remember Joey doesn't share food... but I'd share pizza with you!`,
+      text: `Whenever you feel tired or stressed, ${m}: grab a slice of your favorite cake, take a nap, and remember Joey doesn't share food... but I'd share with you!`,
       author: "Joey Tribbiani",
       color: "#FFE4E6",
       tapeColor: "#FDA4AF",
@@ -48,7 +65,7 @@ const friendsData = {
     {
       id: "fn-3",
       tag: "Chandler's Sincere Note",
-      text: `Could I BE any prouder to know someone as kind, genuine, and wonderful as you, ${m}? Have the happiest birthday!`,
+      text: `Could I BE any happier to wish you a happy birthday, ${m}? You make every regular day a lot more fun.`,
       author: "Chandler Bing",
       color: "#E0F2FE",
       tapeColor: "#7DD3FC",
@@ -59,141 +76,111 @@ const friendsData = {
   favoriteMoments: [
     {
       id: "friends-1",
-      title: "Central Perk Warm Hug",
-      description: `Surrounding ${m} with infinite warmth and love from the whole gang.`,
-      gif: "https://i.giphy.com/VbEC9WchxkiWTL5PFo.gif",
-      emoji: "☕",
-      sticker: "🛋️",
-      mood: "comfort",
-    },
-    {
-      id: "friends-2",
-      title: "Monica's Birthday Celebration",
-      description: "Pure victory celebration energy because today is all about you!",
-      gif: "https://i.giphy.com/26FPGI3ZgduhYYVTa.gif",
-      emoji: "🎉",
-      sticker: "⭐",
+      title: "Monica's Turkey Dance",
+      description: "The most iconic, ridiculous celebration dance of all time to make you giggle!",
+      gif: "https://i.giphy.com/cnjJcoWSpb5pSV40gc.gif",
+      emoji: "🦃",
+      sticker: "😂",
       mood: "laugh",
     },
     {
+      id: "friends-2",
+      title: "Chandler's Big Thumbs Up",
+      description: `Chandler letting ${m} know that you're doing an amazing job.`,
+      gif: "https://i.giphy.com/JPsFUPp3vLS5q.gif",
+      emoji: "👍",
+      sticker: "✨",
+      mood: "pep",
+    },
+    {
       id: "friends-3",
-      title: "The Ultimate Friend Circle",
-      description: `Six friends who remind us that people like you, ${m}, make life beautiful.`,
-      gif: "https://i.giphy.com/dCLbnsZVBdeGB9rBma.gif",
-      emoji: "👫",
+      title: "The Big Group Celebration",
+      description: "Pure jumping, hugging, happy celebration energy for your birthday!",
+      gif: "https://i.giphy.com/Za2odM4y39pa7h5PAv.gif",
+      emoji: "🎉",
       sticker: "❤️",
       mood: "comfort",
     },
     {
       id: "friends-4",
-      title: "Unstoppable Smiles & Coffee",
-      description: "When the gang gets together for good laughs and sweet conversations.",
-      gif: "https://i.giphy.com/hXOc9DJufLxpzo82zq.gif",
-      emoji: "✨",
-      sticker: "☕",
-      mood: "pep",
+      title: "Cozy Central Perk Days",
+      description: "Six friends sharing life over warm coffee mugs on the orange couch.",
+      gif: "https://i.giphy.com/Zds7ggWpSfe675qU1A.gif",
+      emoji: "☕",
+      sticker: "🛋️",
+      mood: "comfort",
     },
   ],
 
   roulette: [
     {
       id: "r1",
-      title: "Central Perk Hug",
-      quote: `The one where ${m} is reminded how loved she is.`,
-      gif: "https://i.giphy.com/VbEC9WchxkiWTL5PFo.gif",
+      title: "Joey & Chandler's Great Laugh",
+      quote: `You've got this, ${m}! Keep on smiling.`,
+      gif: "https://i.giphy.com/ZCltfQc8CMbh7DRcG8.gif",
     },
     {
       id: "r2",
-      title: "Pure Joy Celebration",
-      quote: `Happy Birthday to the one and only ${m}!`,
-      gif: "https://i.giphy.com/26FPGI3ZgduhYYVTa.gif",
+      title: "Phoebe's Happy Dance",
+      quote: "Dance like no one's watching and let yourself be silly!",
+      gif: "https://i.giphy.com/eHLMFV5OsZLEDX1adl.gif",
     },
     {
       id: "r3",
-      title: "Squad High Spirits",
-      quote: "I'll be there for you, 'cause you're there for me too.",
-      gif: "https://i.giphy.com/YQHBoOpGwdTwuBSZKs.gif",
-    },
-    {
-      id: "r4",
-      title: "Friends Laughing Together",
-      quote: "The best moments are the ones that make your stomach hurt from laughing.",
-      gif: "https://i.giphy.com/RJgcQtiKDfuQDG2eKr.gif",
+      title: "Friends On The Couch",
+      quote: `Happy Birthday, ${m}! You deserve all the good things in the world.`,
+      gif: "https://i.giphy.com/LrGO8ATqII2oegLenU.gif",
     },
   ],
 
   birthdayEpisode: {
     season: "10",
     episode: "18",
-    title: `The One With ${m}'s Special Birthday`,
+    title: `The One With ${m}'s Birthday`,
     description:
-      `The gang gathers in apartment 20 with balloons, cheesecake, and endless laughter to throw ${m} the most unforgettable birthday party ever.`,
+      `The gang gathers in apartment 20 with warm tea, delicious cake, and cozy stories to celebrate ${m}.`,
   },
-
-  episodeArchive: [
-    {
-      id: "friends-ep1",
-      season: "01",
-      episode: "01",
-      title: "The One Where Monica Gets a Roommate",
-      description: "Where it all begins and six strangers become a lifelong comfort family.",
-    },
-    {
-      id: "friends-ep2",
-      season: "04",
-      episode: "12",
-      title: "The One With The Embryos (The Trivia Game)",
-      description: "Pure comedy perfection guaranteed to make you laugh every single time.",
-    },
-    {
-      id: "friends-ep3",
-      season: "05",
-      episode: "14",
-      title: "The One Where Everybody Finds Out",
-      description: "Phoebe and Chandler's showdown: they don't know that we know they know we know!",
-    },
-  ],
 
   openWhen: [
     {
       id: "friends-open-1",
       emoji: "🌧️",
-      title: "Open when you're feeling sad or down",
-      preview: "A warm cup of coffee and a tight hug are waiting for you inside...",
+      title: "Open when you're feeling down or tired",
+      preview: "A warm cup of coffee and a tight hug are waiting inside...",
       description:
-        `Take a slow breath, ${m}. Bad days happen, but they always pass. Even in gloomy weather, you are cherished, supported, and never alone. You don't have to carry the whole world on your shoulders today.`,
+        `Take a slow breath, ${m}. Bad days happen, but they pass. Even in gloomy weather, you are cherished, supported, and never alone. You don't have to carry the whole world today.`,
       quote: "I'll be there for you, when the rain starts to pour.",
-      character: "The Central Perk Crew",
-      gif: "https://i.giphy.com/VbEC9WchxkiWTL5PFo.gif",
+      character: "The Friends Crew",
+      gif: "https://i.giphy.com/kgCVLjQ9nBAXDya16s.gif",
     },
     {
       id: "friends-open-2",
-      emoji: "💪",
-      title: "Open when you need motivation or courage",
-      preview: "Channeling Monica Geller's unstoppable determination...",
+      emoji: "🦕",
+      title: "Open when life feels confusing or weird",
+      preview: "Ross trying to make sense of the universe...",
       description:
-        `You have solved 100% of your hardest days so far, ${m}. Whatever challenge is in front of you right now, you have the brains, grace, and courage to get through it. Believe in your magic!`,
-      quote: "You are stronger, smarter, and more capable than you know.",
-      character: "Monica Geller",
-      gif: "https://i.giphy.com/26FPGI3ZgduhYYVTa.gif",
+        `When things feel upside down, ${m}, remember: Ross has survived three divorces, leather pants, and an entire sandwich heist. You will get through whatever's on your plate with flying colors!`,
+      quote: "I'm fine... totally fine!",
+      character: "Ross Geller",
+      gif: "https://i.giphy.com/JTUtO8ZZu4CdNmSOds.gif",
     },
     {
       id: "friends-open-3",
       emoji: "😂",
       title: "Open when you just need a hearty laugh",
-      preview: "Guaranteed serotonin boost inside for M...",
+      preview: "Guaranteed giggle inside for M...",
       description:
-        `Life is too short to take everything seriously, ${m}! Drop your shoulders, relax your jaw, and let yourself giggle. Here is your reminder to dance like nobody's watching!`,
+        `Life is too short to take everything seriously, ${m}! Drop your shoulders, relax your jaw, and let yourself giggle.`,
       quote: "Could today BE any more wonderful?",
       character: "Chandler Bing",
-      gif: "https://i.giphy.com/dCLbnsZVBdeGB9rBma.gif",
+      gif: "https://i.giphy.com/hXOc9DJufLxpzo82zq.gif",
     },
   ],
 
   finalSurprise: {
     title: `A Birthday Wish Just For ${m}`,
     message:
-      `Happy Birthday, ${m}! Thank you for being such a wonderful, bright, and heartwarming presence. Whenever life gets busy or noisy, you always have this comfort scrapbook to return to. Wishing you the happiest year ahead! ❤️`,
+      `Happy Birthday, ${m}! Thank you for being such a wonderful, bright, and heartwarming person. Whenever you need comfort, this scrapbook is always here for you. Have the happiest year ahead! ❤️`,
   },
 };
 
